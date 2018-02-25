@@ -19,7 +19,7 @@ import java.sql.SQLException;
 import java.util.Observable;
 import java.util.ResourceBundle;
 
-public class adminController implements Initializable {
+public class implements Initializable {
     private dbConnection db;
     private ObservableList<StudentData> data;
     @FXML
