@@ -1,22 +1,21 @@
 package sample;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class Controller implements Initializable {
     private loginModel loginmodel = new loginModel();
 
-    @FXML
-    private JFXTextField username;
 
-    @FXML
-    private JFXPasswordField password;
 
-    @FXML
-    private JFXButton btnLogin;
 
-    @FXML
-    private Label loginStatus;
 
-    @FXML
-    private Label dbStatus;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -32,7 +31,8 @@ public class Controller implements Initializable {
     public void Login(ActionEvent event){
         try {
             if (this.loginmodel.isLogin(username.getText(), password.getText())) {
-                Stage stage = (Stage) this.btnLogin.getScene().getWindow();
+                Stage stage;
+                stage = (Stage) this.btnLogin.getScene().getWindow();
                 stage.close();
                 adminDashboard();
 
